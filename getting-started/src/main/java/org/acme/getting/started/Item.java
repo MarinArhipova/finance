@@ -1,4 +1,4 @@
 package org.acme.getting.started;
 
-public class GreetingService {
+public class Item {
 }
