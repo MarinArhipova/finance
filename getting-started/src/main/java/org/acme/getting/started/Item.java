@@ -31,7 +31,11 @@ public class Item extends PanacheEntity{
 
     @ManyToOne
     @JsonIgnore
-    public Account account;
+    public Account incomes;
+
+    @ManyToOne
+    @JsonIgnore
+    public Account expenses;
 
     public String getTitle() {
         return title;

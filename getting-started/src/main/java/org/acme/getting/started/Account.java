@@ -16,22 +16,22 @@ import java.util.List;
 //@Cacheable
 public class Account extends PanacheEntity {
 
-   // @Id
-    //@Column(name="name")
     private String name;
 
-    //@Column(name="last_seen")
     private Date lastSeen;
 
-    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Valid
+    @OneToMany(mappedBy = "incomes", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Item> incomes;
 
-  //  @Valid
-  //  private List<Item> expenses;
+    @Valid
+    @OneToMany(mappedBy = "expenses", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<Item> expenses;
 
-   // @Valid
-  //  @NotNull
-//    private Saving saving;
+    @Valid
+    @NotNull
+    @OneToOne(mappedBy = "savings", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Saving saving;
 
     @Length(min = 0, max = 20_000)
     private String note;
@@ -60,7 +60,7 @@ public class Account extends PanacheEntity {
         this.incomes = incomes;
     }
 
- /*   public List<Item> getExpenses() {
+    public List<Item> getExpenses() {
         return expenses;
     }
 
@@ -74,7 +74,7 @@ public class Account extends PanacheEntity {
 
     public void setSaving(Saving saving) {
         this.saving = saving;
-    } */
+    }
 
     public String getNote() {
         return note;
