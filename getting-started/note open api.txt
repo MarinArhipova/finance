@@ -1,11 +1,3 @@
-modify springboot to microservice
-
-org.acme.openapi.swagger
-FruitResource
-
-test > java > org.acme.openapi.swagger
-FruitResourceTest
-
 add openapi
 
 ./mvnw quarkus:add-extension -Dextensions="quarkus-smallrye-openapi"
@@ -25,7 +17,12 @@ mp.openapi.extensions.smallrye.openapi=3.0.2
 auto generation operationId
 mp.openapi.extensions.smallrye.operationIdStrategy=METHOD
 
+/*
 if you wanna run in production add 
 quarkus.swagger-ui.always-include=true
 in application.properties
+
+if you wanna run api in browser
+http://localhost:8080/my-custom-path
+
 
