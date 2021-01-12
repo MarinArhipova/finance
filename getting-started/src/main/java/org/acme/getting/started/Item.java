@@ -15,66 +15,23 @@ public class Item extends PanacheEntity{
 
     @NotNull
     @Length(min = 1, max = 20)
-    private String title;
+    public String title;
 
     @NotNull
-    private BigDecimal amount;
+    public BigDecimal amount;
+
+  /*  @NotNull
+    public Currency currency;
 
     @NotNull
-    private Currency currency;
+    public TimePeriod period; */
 
     @NotNull
-    private TimePeriod period;
-
-    @NotNull
-    private String icon;
+    public String icon;
 
     @ManyToOne
     @JsonIgnore
-    public Account incomes;
+    public Account account;
 
-    @ManyToOne
-    @JsonIgnore
-    public Account expenses;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
-    }
-
-    public TimePeriod getPeriod() {
-        return period;
-    }
-
-    public void setPeriod(TimePeriod period) {
-        this.period = period;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
 }
 
